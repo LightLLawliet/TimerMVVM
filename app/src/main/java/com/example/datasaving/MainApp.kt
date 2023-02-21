@@ -8,6 +8,7 @@ class MainApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        viewModel = MainViewModel(Repository(this), SecondsToHours.Base())
+        viewModel =
+            MainViewModel(Repository(DataSource.Base(this), Now.Base()), SecondsToHours.Base())
     }
 }
